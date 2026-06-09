@@ -152,12 +152,12 @@ if (typeof module !== 'undefined' && module.exports) {
  */
 const ANNOTATIONS = {
   ibm: {
-    body: '[FILLED STAGE 4: Maya\'s rebuttal — IBM annotation]',
-    citation: '[FILLED STAGE 4: e.g. Logical-qubit demonstration, Nature, 2024]',
+    body: 'IBM\'s published peer-reviewed demonstrations of logical qubits to date remain in single digits. The gap between "plan to deliver" and "have delivered" has widened in every roadmap revision since 2021. The same 200-logical-qubit milestone existed on the 2021 roadmap, scheduled four years earlier.',
+    citation: 'IBM Quantum published demonstrations 2023–2025 vs. successive IBM Quantum Development Roadmap revisions [team to verify exact dates].',
   },
   ionq: {
-    body: '[FILLED STAGE 4: Maya\'s rebuttal — IonQ annotation]',
-    citation: '[FILLED STAGE 4: e.g. IonQ 10-K, FY2025, item X]',
+    body: 'IonQ\'s FY2025 10-K discloses that the majority of booked revenue comes from networking deployments and government R&D contracts. Quantum compute revenue from production workloads remains in low single digits as a percentage of total revenue.',
+    citation: 'IonQ Inc. Form 10-K, FY2025 [team to verify specific line items and dollar figures Day 3].',
   },
 };
 
@@ -190,7 +190,15 @@ const ANNOTATIONS = {
  * ---------------------------------------------------------------------------
  */
 const FOOTNOTES = {
-  '1': '[FILLED STAGE 4: footnote 1]',
+  '1': 'IBM Condor: 1,121-qubit processor announced December 2023. [Team Day 3: verify against IBM Newsroom announcement and any subsequent architecture brief.]',
+  '2': 'PsiQuantum has publicly guided a one-million-physical-qubit fault-tolerant datacenter on a ~5–10 year horizon. [Team Day 3: verify exact year and target against most recent public PsiQuantum statement, likely a 2024–25 executive interview or press release.]',
+  '3': 'Best demonstrated logical-qubit overhead remains on the order of 1,000:1 physical-to-logical. Cf. Google Quantum AI logical qubit results (Nature, 2023 and subsequent peer-reviewed follow-ups). [Team Day 3: verify against most recent peer-reviewed result.]',
+  '4': 'IBM Quantum Development Roadmap (most recent published) targets ~100:1 overhead for the planned error-corrected era. [Team Day 3: verify against IBM Quantum blog roadmap post.]',
+  '5': 'IBM Quantum Development Roadmap, 2021 version. [Team Day 3: verify specific 2024–2026 logical-qubit milestone wording, archived URL preferred.]',
+  '6': 'IBM Quantum Development Roadmap, most recent (2025) version. [Team Day 3: verify wording showing the same milestone now scheduled for the early 2030s.]',
+  '7': 'IonQ Inc., Annual Report on Form 10-K, most recent fiscal year. [Team Day 3: identify and verify the line item disclosing quantum-compute-derived revenue vs. total booked revenue.]',
+  '8': 'John Preskill, recent talks and essays on the end of the NISQ era. Likely sources: Preskill\'s Caltech webpage, arXiv, or a 2024–25 keynote transcript. [Team Day 3: locate and cite a specific quote with date.]',
+  '9': 'Peer-reviewed survey of working quantum researchers; median fault-tolerant useful-machine timeline ~2040. [Team Day 3: locate a 2024+ published survey; if not findable, substitute with a citation of an alternative documented researcher-consensus source, e.g., a Preskill timeline statement.]',
 };
 
 (function initFootnotes() {
