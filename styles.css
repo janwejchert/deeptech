@@ -171,9 +171,27 @@ body {
   border: var(--rule-thin);
   padding: calc(var(--unit) * 2.5);
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--ink-secondary);
-  min-height: 180px;
+  min-height: 200px;
+  max-height: calc(100vh - calc(var(--unit) * 12));
+  overflow-y: auto;
+}
+.marginalia a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.marginalia a:hover {
+  color: var(--ink);
+}
+.marginalia em {
+  font-style: italic;
+  color: var(--ink);
+}
+.marginalia strong {
+  font-weight: 700;
+  color: var(--ink);
 }
 .marginalia-empty {
   font-style: italic;

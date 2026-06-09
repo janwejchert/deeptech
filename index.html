@@ -72,29 +72,29 @@
     <section class="prose" id="what">
       <h2 class="section-head">What</h2>
       <p><strong>Pillar 1 — Error-correction overhead.</strong> The headline number in every IBM, PsiQuantum, and Quantinuum press release is the <em>physical</em> qubit count. IBM's Condor crossed one thousand one hundred and twenty-one<sup class="fn-ref" data-fn="1"></sup>. PsiQuantum has guided one million<sup class="fn-ref" data-fn="2"></sup>. These are real engineering achievements. They are also not the same number as a useful quantum computer.</p>
-      <p>The useful number is <em>logical</em> qubits — qubits that survive long enough to run a non-trivial algorithm. Today, the best demonstrated overhead in any peer-reviewed result is on the order of one thousand physical qubits per logical qubit<sup class="fn-ref" data-fn="3"></sup>. The industry target is one hundred to one<sup class="fn-ref" data-fn="4"></sup>. Both numbers are public; both have been public for a decade; neither has moved.</p>
+      <p>The useful number is <em>logical</em> qubits — qubits that survive long enough to run a non-trivial algorithm. The best demonstrated overhead today is approximately one hundred physical qubits per logical qubit<sup class="fn-ref" data-fn="3"></sup>; the overhead <em>projected</em> for fault-tolerant computation is one thousand to one thousand five hundred. Industry is pushing on this with new code constructions<sup class="fn-ref" data-fn="4"></sup>; no one disputes the order-of-magnitude gap remains.</p>
       <p>Exhibit A lets you build the timeline yourself. Pick a use case. Drag the overhead and doubling-cadence sliders to whatever you believe. The math is unforgiving: under any honest assumption, useful quantum computing arrives sometime in the 2040s. Not the 2020s.</p>
-      <p><strong>Pillar 2 — Public-company roadmap slippage.</strong> IBM's 2021 development roadmap was explicit: it forecast useful logical qubits by the mid-2020s<sup class="fn-ref" data-fn="5"></sup>. The 2025 roadmap promised the same milestone — by the early 2030s<sup class="fn-ref" data-fn="6"></sup>. The headline qubit count has nearly doubled in three years. The <em>logical</em> qubit count, in their own published demonstrations, has not crossed double digits.</p>
+      <p><strong>Pillar 2 — Public-company roadmap slippage.</strong> IBM's 2022 development roadmap forecast a 4,000-qubit system by 2025 as the gateway to the practical quantum computing era<sup class="fn-ref" data-fn="5"></sup>. The 2025 roadmap retired that headline number and replaced it: fault-tolerant 200-logical-qubit operation by 2029 (Starling), 2,000 logical qubits by 2033 (Blue Jay)<sup class="fn-ref" data-fn="6"></sup>. The metric of advantage moved; the date moved with it. The goalposts slid right by half a decade.</p>
       <p>This is not one company's failure. Exhibits B and C are direct quotes from IBM's and IonQ's own investor materials, paired on hover with their most recent published results. You will see the same pattern: a forward roadmap that compresses every twelve months, and a backward-looking record that does not.</p>
-      <p>Of particular note for our fund: IonQ's most recent 10-K acknowledges that compute revenue from actual quantum workloads remains a single-digit percentage of booked revenue<sup class="fn-ref" data-fn="7"></sup>. We are paying for the chemistry of the future and receiving the marketing of the present.</p>
+      <p>Of particular note for our fund: IonQ's own 10-K acknowledges, in its Risk Factors, that "we have not generated significant revenue from commercial customers"<sup class="fn-ref" data-fn="7"></sup>; the bulk of 2024 revenue derived from hardware contracts and government R&amp;D services, not recurring quantum-cloud workloads. We are paying for the chemistry of the future and receiving the marketing of the present.</p>
       <p><strong>Pillar 3 — The LP–physicist gap.</strong> There is a third dataset, less quantitative but harder to ignore. In the eighteen months I have spent with the physicists who actually run these labs — at Caltech, at Yale, inside the IBM Quantum group — not one has told me, in private, that they expect a fault-tolerant quantum advantage inside the next decade.</p>
-      <p>The same physicists, in public, are quoted in the press releases of the companies we have funded. John Preskill, who coined "quantum supremacy," has been increasingly explicit in recent talks that the NISQ era — the era in which our thesis was conceived — is ending without delivering the applications that justified it<sup class="fn-ref" data-fn="8"></sup>. The most recent peer-reviewed survey of working quantum researchers puts the <em>median</em> timeline for a useful fault-tolerant machine at 2040<sup class="fn-ref" data-fn="9"></sup>.</p>
+      <p>The same physicists, in public, are quoted in the press releases of the companies we have funded. John Preskill, who coined "quantum supremacy," has been increasingly explicit in recent talks that the NISQ era — the era in which our thesis was conceived — is ending without delivering the applications that justified it<sup class="fn-ref" data-fn="8"></sup>. The Global Risk Institute's 2024 Quantum Threat Timeline survey, polling thirty-two quantum experts, places the 50 percent probability threshold for a cryptographically relevant quantum computer between 2039 and 2044<sup class="fn-ref" data-fn="9"></sup>.</p>
       <p>We have been listening to the wrong people in the same building.</p>
     </section>
 
     <figure class="exhibit annotated" id="exhibit-ibm" aria-labelledby="exhibit-ibm-label">
       <figcaption id="exhibit-ibm-label" class="exhibit-label">EXHIBIT B&nbsp;·&nbsp;ANNOTATED — IBM ROADMAP</figcaption>
       <blockquote class="annotated-quote" data-annotation="ibm">
-        <p>"By 2029, we plan to deliver IBM Quantum Starling — a fault-tolerant quantum computer capable of executing 100 million gates with 200 logical qubits."</p>
-        <cite>— IBM Quantum Development Roadmap [verbatim wording to be verified by team Day 3]</cite>
+        <p>"Starling will be able to access the computational power required for these problems by running 100 million quantum operations using 200 logical qubits."</p>
+        <cite>— IBM Newsroom, 10 June 2025</cite>
       </blockquote>
     </figure>
 
     <figure class="exhibit annotated" id="exhibit-ionq" aria-labelledby="exhibit-ionq-label">
-      <figcaption id="exhibit-ionq-label" class="exhibit-label">EXHIBIT C&nbsp;·&nbsp;ANNOTATED — IONQ INVESTOR DAY</figcaption>
+      <figcaption id="exhibit-ionq-label" class="exhibit-label">EXHIBIT C&nbsp;·&nbsp;ANNOTATED — IONQ S-1, 2021</figcaption>
       <blockquote class="annotated-quote" data-annotation="ionq">
-        <p>"We believe IonQ remains on track to deliver quantum advantage on commercially valuable problems in the near term, with our roadmap targeting algorithmic qubit milestones consistent with our 2021 investor guidance."</p>
-        <cite>— IonQ Investor Day materials [verbatim wording and exact date to be verified by team Day 3]</cite>
+        <p>"No current quantum computers, including the IonQ quantum hardware, have reached a broad quantum advantage, and they may never reach such advantage."</p>
+        <cite>— IonQ, Inc., Registration Statement on Form S-1, 2021</cite>
       </blockquote>
     </figure>
 
