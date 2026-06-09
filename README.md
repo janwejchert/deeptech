@@ -1,6 +1,6 @@
 # Aperture LP Letter — Quantum Computing Group Project
 
-**Course:** IE Business School · Deep Tech Venturing & Investment (Prof. David)
+**Course:** IE Business School · Deep Tech Venturing & Investment
 **Deliverable:** 1,000-word magazine article on a deep-tech area
 **Hard deadline:** Sunday 14 June 2026, 17:59 CET
 **Internal target:** Saturday 13 June 2026, 21:00 CET
