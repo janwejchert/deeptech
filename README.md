@@ -11,7 +11,7 @@ An immersive web piece presenting a fictional 1,000-word letter from Maya Chen, 
 
 **The fund and Maya are fictional. Every cited number, physics claim, public-company roadmap quote, and SEC-filed financial detail is real and footnoted.**
 
-Designed for the contrarian / skeptic angle the brief allows. Built around the prof's Why→What→How→Ask pitch structure, with a working interactive timing calculator as the embedded "exhibit" and inline annotated quotes from IBM and IonQ public filings.
+Designed for the contrarian / skeptic angle the brief allows. Built around the Why→What→How→Ask pitch structure, with a working interactive timing calculator as the embedded "exhibit," annotated quotes from IBM and IonQ investor materials, a roadmap-slippage table, and an expert-survey chart.
 
 ## Repository layout
 
@@ -19,19 +19,20 @@ Designed for the contrarian / skeptic angle the brief allows. Built around the p
 .
 ├── index.html               ← the letter page (the deliverable)
 ├── styles.css               ← Howard Marks design system (ivory + ink + muted gold, serif)
-├── app.js                   ← calculator + hover annotations + footnote popover + audio + scroll-spy
+├── app.js                   ← calculator + annotations + footnotes/marginalia + source index
+│                              + scroll-spy + reading progress + audio toggle
 ├── package.json             ← Vercel detection
-├── assets/                  ← audio.mp3 (added Day 4), favicon, og-image
-├── citations/               ← source list + downloadable PDF (added Day 4–5)
+├── assets/                  ← favicon.svg, og-image.png (audio.mp3 still pending — Day 4)
+├── citations/               ← index.html (browsable source list) + citations.pdf (download)
 ├── tests/
-│   └── calculator.test.html ← in-browser unit tests for calculator math
+│   └── calculator.test.html ← in-browser unit tests for calculator math (12 assertions)
 ├── docs/
 │   └── superpowers/
 │       ├── specs/2026-06-09-quantum-article-design.md       ← the approved spec
 │       └── plans/2026-06-09-quantum-article-implementation.md ← the phased plan
 └── content/
-    ├── letter-source.md         ← writer's working draft (markdown source of truth for the prose)
-    └── sources-for-review.md    ← citation verification report from the research pass
+    ├── letter-source.md         ← letter prose v1 (mirrors index.html; Google Doc is canon)
+    └── sources-for-review.md    ← Day-1 citation report + pass-#2 verification ADDENDUM
 ```
 
 ## Local development
@@ -44,19 +45,19 @@ python3 -m http.server 8000
 
 ## Status (as of last commit)
 
-- Site scaffold + Howard Marks design system live
-- Letter prose v0 integrated (~1,012 words, in range)
-- Calculator math + 11 unit tests passing (chemistry / optimization / RSA × multiple input ranges)
-- 3-column responsive layout (sticky nav + reading column + marginalia)
-- 9 footnotes wired with real verified URLs (IBM Newsroom, Nature, BusinessWire, SEC EDGAR, Preskill / Caltech, Global Risk Institute)
-- Two annotated exhibits with verbatim quotes from IBM Newsroom (10 Jun 2025) and IonQ's S-1 (2021)
+- Letter prose v1 integrated — ~1,014 body words (within the 1,000 ±5% brief), every claim re-verified against primary sources in a second adversarial research pass (see `content/sources-for-review.md` → Addendum)
+- 11 footnotes live, all with verified verbatim quotes and working primary-source URLs (IBM Newsroom, Nature, BusinessWire, SEC EDGAR, ACM/Preskill, Global Risk Institute, NIST/NSA, Cerca/CSIRO/Q-CTRL)
+- Four exhibits: A — interactive timing calculator (sliders annotated with demonstrated-vs-projected anchors, published methodology note); B — annotated IBM quote + roadmap-slippage table; C — annotated IonQ Risk Factors quote; D — expert-survey ten-year-odds range chart with even-odds line
+- Visual density pass: fund-at-a-glance stat strip, drop cap, pull quotes, sticky left nav (fixed — sidebars now actually stick), persistent right-rail source index + scroll-driven marginalia, reading-progress bar, two-column sources & notes, print stylesheet
+- Calculator math: 12/12 in-browser unit tests pass; interactions (footnote click, source-index click, annotation hover, scroll-spy, slider updates) verified headlessly
+- `assets/favicon.svg` + `assets/og-image.png` shipped; `citations/citations.pdf` generated and linked
 
 ## Outstanding before submission
 
-- Audio (ElevenLabs machine-read, Day 4)
-- Mobile pass + Lighthouse audit (Day 5)
-- Citation PDF export (Day 5)
-- Three independent read-throughs + prof read-through critique (Day 4 evening / Day 5)
+- Audio (ElevenLabs machine-read, Day 4) — player degrades gracefully until then
+- Lighthouse audit + cross-browser pass (Day 5)
+- Three independent read-throughs + cold read-through critique (Day 4 evening / Day 5)
+- Replace `[Team member N]` placeholders in the page footer with real names
 - Vercel production deploy (Day 5)
 
 ## Team
@@ -65,4 +66,4 @@ Three members. Roles: writer-lead / designer-lead / developer-lead (all three ar
 
 ## Authorship note
 
-This project was scaffolded in collaboration with Claude (Anthropic). The thesis, design choices, prose voice, and creative direction are the team's. AI assistance covered: site scaffolding, CSS design system, JS calculator and interactions, draft prose generation, source verification via web research, layout iteration.
+This project was scaffolded in collaboration with Claude (Anthropic). The thesis, design choices, prose voice, and creative direction are the team's. AI assistance covered: site scaffolding, CSS design system, JS calculator and interactions, draft prose generation, two rounds of source verification via web research, layout iteration, and asset/PDF generation.
