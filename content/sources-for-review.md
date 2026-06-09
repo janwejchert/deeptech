@@ -240,3 +240,30 @@ Read through the report. For each ⚠️ and ❌ item, choose one of:
 3. **Drop the claim** — remove the sentence/footnote/exhibit from the letter entirely.
 
 The big one is **Exhibit C** — that's the most consequential decision. If you want my recommendation in one line: **go with Option A (the IonQ S-1 quote)**. It's the sharpest thesis-fit and lifts the article's defensibility considerably.
+
+---
+
+# ADDENDUM — Verification pass #2 (2026-06-09, evening)
+
+A second adversarial research pass re-verified every live citation after integration. **It corrects two recommendations made above.** The page (`index.html` / `app.js`) reflects all of the findings below; this addendum exists so nobody re-introduces the retracted items from the original report.
+
+## Corrections to the original report
+
+1. **Footnote 7 / "Option 2" above is RETRACTED.** The phrase *"we have not generated significant revenue from commercial customers"* could **not** be located in any IonQ SEC filing. Do not quote it. The letter now uses verified FY2024 figures instead: revenue $43.1M; two customers = 69% (Q1) / 75% (H1) / 79% (9M) of revenue per the 2024 10-Qs; $54.5M AFRL award (25 Sep 2024). Note FY2025 revenue passed $100M and IonQ's commercial mix broadened in 2025–26 — the prose concedes the ramp on purpose.
+2. **Exhibit C attribution corrected.** The verifiable sentence reads *"No current quantum computers, including **our** quantum hardware, have reached a broad quantum advantage, and they may never reach such advantage."* — confirmed in IonQ Forms 10-K FY2022–FY2025 (and 2021 merger-era materials). The "the IonQ quantum hardware" variant attributed above to the S-1 could not be verified; the exhibit now cites the 10-K Risk Factors ("carried in every annual filing since its 2021 listing").
+
+## Other fixes applied in pass #2
+
+3. **Footnote 4 (Bravyi et al.):** theory/simulation paper, not a hardware demonstration — wording changed from "demonstrates" to "shows, via circuit-level noise simulations… assuming 0.1% physical error rates."
+4. **Footnote 9 (GRI):** single-value percentages (14/34/55/79) replaced with the report's pessimistic–optimistic **ranges** (5–14% @5y, 19–34% @10y for 2024; 28–49% @10y for 2025), and the internally inconsistent "50% crosses 2039–2044" sentence removed. The **2025 edition (26 experts)** is now cited alongside 2024 — a June 2026 letter citing only the 2024 edition was attackable. Exhibit D charts the two ten-year ranges against an "even odds" line.
+5. **Footnote 1 (Condor):** "largest" now qualified as *gate-based superconducting* (Atom Computing announced a 1,180-qubit neutral-atom system in Oct 2023; Caltech's 6,100-atom array has no entangling gates). Methodology note discloses the anchor choice is immaterial (<0.25 yr).
+6. **Footnote 3 (Willow):** citation year corrected to Nature 638 (2025), published online 9 Dec 2024.
+7. **IBM annotation (Exhibit B):** "single digits" claim tightened to "single-logical-qubit level" hardware demos + Loon component validations (Nov 2025) + Kookaburra roadmapped 2026.
+8. **New footnote 10 (sensing):** navigation is in defense **trials** (Q-CTRL airborne + 144-hr Royal Australian Navy sea trial, 2025), not production; commercial claims limited to OPM-MEG (Cerca) and CSIRO LANDTEM.
+9. **New footnote 11 (PQC):** NIST IR 8547 must be called a **draft**; the dated, binding timeline is NSA CNSA 2.0 (2027 acquisitions / 2033 exclusive use).
+10. **IonQ #AQ milestones (annotation):** confirmed — #AQ 35 on 25 Jan 2024 ("one year ahead of schedule," IonQ's own release), #AQ 64 on 25 Sep 2025 ("three months ahead of schedule," IonQ Tempo).
+11. **Chapman quote (if ever used):** "As we enter 2025, IonQ has a strong pipeline…" is verbatim from the Q4-2024 release (26 Feb 2025) but must be attributed to Peter Chapman as **then-Executive Chair** — Niccolo de Masi was named CEO the same day. Currently not used on the page.
+
+## Verified-clean items (no change needed)
+
+- FN2 PsiQuantum quote (verbatim; use unspaced em dash), FN5 IBM 2022 roadmap quote, FN6 Starling/Blue Jay figures, FN8 Preskill quote + DOI (ACM TQC 6(3), Art. 18, 29 Apr 2025) — all confirmed verbatim against primary sources.
