@@ -18,6 +18,10 @@
 
   --rule-thin: 1px solid var(--gold-soft);
   --rule-strong: 2px solid var(--gold);
+
+  --col-left: 200px;
+  --col-right: 280px;
+  --grid-gap: 56px;
 }
 
 * { box-sizing: border-box; }
@@ -27,16 +31,16 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 .letter {
-  max-width: 1280px;
+  max-width: 1480px;
   margin: 0 auto;
-  padding: calc(var(--unit) * 6) calc(var(--unit) * 4);
+  padding: calc(var(--unit) * 6) calc(var(--unit) * 5);
 }
 
 .disclosure {
@@ -53,13 +57,21 @@ body {
 /* --- 3-column letter grid --- */
 .letter-grid {
   display: grid;
-  grid-template-columns: 220px minmax(0, var(--measure)) 300px;
-  gap: calc(var(--unit) * 6);
+  grid-template-columns: var(--col-left) minmax(0, 1fr) var(--col-right);
+  gap: var(--grid-gap);
   align-items: start;
 }
 
 .letter-main {
   min-width: 0;
+}
+
+/* Prose fills the main column. Exhibits, blockquotes, and section heads
+ * all take the full available width — what changes between them is
+ * vertical rhythm, not horizontal constraint.
+ */
+.letter-main .prose p {
+  /* no max-width — fills the column */
 }
 
 .sidebar {
@@ -216,10 +228,11 @@ body {
 .title {
   font-weight: 400;
   font-style: italic;
-  font-size: 32px;
-  line-height: 1.2;
-  margin: 0 0 calc(var(--unit) * 3);
+  font-size: 44px;
+  line-height: 1.1;
+  margin: 0 0 calc(var(--unit) * 5);
   color: var(--ink);
+  letter-spacing: -0.5px;
 }
 
 .audio-player {
@@ -256,13 +269,15 @@ body {
 }
 
 .section-head {
-  font-size: 13px;
-  letter-spacing: 4px;
+  font-size: 14px;
+  letter-spacing: 6px;
   text-transform: uppercase;
   color: var(--gold);
-  font-weight: 600;
-  margin: calc(var(--unit) * 6) 0 calc(var(--unit) * 2);
+  font-weight: 700;
+  margin: calc(var(--unit) * 8) 0 calc(var(--unit) * 3);
   font-family: var(--serif);
+  padding-bottom: calc(var(--unit) * 1);
+  border-bottom: var(--rule-thin);
 }
 
 .exhibit {
