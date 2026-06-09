@@ -203,6 +203,13 @@ const FOOTNOTES = {
 
 (function initFootnotes() {
   if (typeof document === 'undefined') return;
+
+  // Two UIs share the footnote content:
+  //   - Desktop: a sticky "marginalia" panel in the right sidebar; updates on scroll AND click
+  //   - Mobile:  a corner popover triggered only on click (marginalia hidden by CSS)
+  // We pick which to drive based on viewport.
+  const isWide = () => window.matchMedia('(min-width: 1101px)').matches;
+
   const popover = document.createElement('div');
   popover.className = 'fn-popover';
   popover.innerHTML = `
@@ -210,25 +217,127 @@ const FOOTNOTES = {
     <div class="fn-content"></div>
   `;
   document.body.appendChild(popover);
-  const content = popover.querySelector('.fn-content');
+  const popContent = popover.querySelector('.fn-content');
   popover.querySelector('.fn-close').addEventListener('click', () => {
     popover.classList.remove('is-open');
   });
+
+  const marginalia = document.getElementById('marginalia');
+
+  function renderMarginalia(num) {
+    if (!marginalia) return;
+    marginalia.innerHTML = `
+      <div class="marginalia-active">
+        <p class="marginalia-num">FOOTNOTE ${num}</p>
+        <p class="marginalia-body">${FOOTNOTES[num] || '[footnote missing]'}</p>
+      </div>
+    `;
+  }
+
+  function openPopover(num) {
+    popContent.innerHTML = `<span class="fn-num">${num}.</span>${FOOTNOTES[num] || '[footnote missing]'}`;
+    popover.classList.add('is-open');
+  }
 
   document.querySelectorAll('.fn-ref').forEach((ref) => {
     const num = ref.getAttribute('data-fn');
     ref.setAttribute('role', 'button');
     ref.setAttribute('tabindex', '0');
     if (!ref.textContent) ref.textContent = num;
-    function open() {
-      content.innerHTML = `<span class="fn-num">${num}.</span>${FOOTNOTES[num] || '[footnote missing]'}`;
-      popover.classList.add('is-open');
+
+    function activate() {
+      if (isWide()) {
+        renderMarginalia(num);
+      } else {
+        openPopover(num);
+      }
     }
-    ref.addEventListener('click', open);
+
+    ref.addEventListener('click', activate);
     ref.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
     });
   });
+
+  // Scroll-driven marginalia: as a footnote ref enters viewport, surface it
+  // in the right-side panel. Most-recently-entered wins.
+  if (marginalia && 'IntersectionObserver' in window) {
+    let lastNum = null;
+    const refs = Array.from(document.querySelectorAll('.fn-ref'));
+    const io = new IntersectionObserver((entries) => {
+      if (!isWide()) return;
+      // Find the entries that are now intersecting; pick the last one (lowest in document order).
+      const intersecting = entries.filter(e => e.isIntersecting);
+      if (intersecting.length === 0) return;
+      const last = intersecting[intersecting.length - 1];
+      const num = last.target.getAttribute('data-fn');
+      if (num !== lastNum) {
+        renderMarginalia(num);
+        lastNum = num;
+      }
+    }, {
+      rootMargin: '-30% 0px -50% 0px',  // fire when ref is near the middle of the viewport
+      threshold: 0,
+    });
+    refs.forEach(r => io.observe(r));
+  }
+})();
+
+/* ---------------------------------------------------------------------------
+ * 4a. initFootnoteList — populate the bottom-of-page <ol> from FOOTNOTES
+ * Keeps the static list in sync with the JS data so screen readers and
+ * non-JS readers see the full source list.
+ * ---------------------------------------------------------------------------
+ */
+(function initFootnoteList() {
+  if (typeof document === 'undefined') return;
+  const list = document.getElementById('footnotes-list');
+  if (!list) return;
+  const keys = Object.keys(FOOTNOTES).sort((a, b) => Number(a) - Number(b));
+  list.innerHTML = keys.map(n => `<li id="fn-${n}">${FOOTNOTES[n]}</li>`).join('');
+})();
+
+/* ---------------------------------------------------------------------------
+ * 4b. initSectionNav — scroll-spy on the left sidebar section navigation
+ * ---------------------------------------------------------------------------
+ */
+(function initSectionNav() {
+  if (typeof document === 'undefined') return;
+  const navLinks = document.querySelectorAll('.section-nav a[data-nav]');
+  if (navLinks.length === 0) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  const sectionIds = ['why', 'what', 'how', 'ask'];
+  const sections = sectionIds
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  function setActive(id) {
+    navLinks.forEach(link => {
+      const isMatch = link.getAttribute('data-nav') === id;
+      link.classList.toggle('is-active', isMatch);
+    });
+  }
+
+  // Use a simple scroll-position check on every observed intersection — the
+  // section whose top is closest to (but past) the viewport top wins.
+  function updateFromScroll() {
+    const trigger = window.innerHeight * 0.35;  // 35% down the viewport
+    let activeId = sectionIds[0];
+    for (const sec of sections) {
+      const top = sec.getBoundingClientRect().top;
+      if (top <= trigger) activeId = sec.id;
+    }
+    setActive(activeId);
+  }
+
+  // IntersectionObserver kicks the update; the actual decision is from scroll position.
+  const io = new IntersectionObserver(updateFromScroll, {
+    rootMargin: '-30% 0px -50% 0px',
+    threshold: 0,
+  });
+  sections.forEach(s => io.observe(s));
+  updateFromScroll();
 })();
 
 /* ---------------------------------------------------------------------------
