@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Calculator tests</title>
+<style>
+  body { font-family: Menlo, monospace; padding: 24px; background: #faf7f0; color: #1a1a1a; }
+  pre { font-size: 13px; line-height: 1.7; }
+  .pass { color: #2d7a2d; }
+  .fail { color: #c0392b; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>Aperture Calculator — Math Tests</h1>
+<p>Open this file in a browser. The page title changes to "FAILING TESTS" if any assertion fails.</p>
+<pre id="out"></pre>
+<script src="../app.js"></script>
+<script>
+  const out = document.getElementById('out');
+  let failed = 0;
+  function assert(name, actual, expected, tolerance = 0) {
+    const pass = tolerance > 0
+      ? Math.abs(actual - expected) <= tolerance
+      : actual === expected;
+    const cls = pass ? 'pass' : 'fail';
+    const marker = pass ? 'PASS' : 'FAIL';
+    out.innerHTML += `<span class="${cls}">${marker}</span>  ${name}  expected=${expected}  actual=${actual}\n`;
+    if (!pass) { failed++; document.title = 'FAILING TESTS'; }
+  }
+
+  // ----- Math correctness -----
+  // chemistry / 100:1 / 1yr:
+  //   log2(150*100 / 1121) * 1 ≈ log2(13.38) ≈ 3.74 → ceil = 4 → 2026 + 4 = 2030
+  assert('chemistry / 100:1 / 1yr → 2030', ApertureCalc.compute('chemistry', 100, 1), 2030);
+
+  // RSA / 1000:1 / 3yr:
+  //   log2(4000*1000 / 1121) * 3 ≈ log2(3568.24) * 3 ≈ 11.80 * 3 = 35.4 → ceil = 36 → 2062
+  assert('RSA / 1000:1 / 3yr → 2062', ApertureCalc.compute('rsa', 1000, 3), 2062);
+
+  // optimization / 500:1 / 2yr:
+  //   log2(1000*500 / 1121) * 2 ≈ log2(446.03) * 2 ≈ 8.80 * 2 = 17.6 → ceil = 18 → 2044
+  assert('optimization / 500:1 / 2yr → 2044', ApertureCalc.compute('optimization', 500, 2), 2044);
+
+  // RSA / 100:1 / 1yr (industry-friendly inputs):
+  //   log2(4000*100 / 1121) * 1 ≈ log2(356.82) ≈ 8.48 → ceil = 9 → 2035
+  assert('RSA / 100:1 / 1yr → 2035', ApertureCalc.compute('rsa', 100, 1), 2035);
+
+  // ----- Industry years -----
+  assert('industry year — chemistry', ApertureCalc.industryYear('chemistry'), 2027);
+  assert('industry year — optimization', ApertureCalc.industryYear('optimization'), 2029);
+  assert('industry year — rsa', ApertureCalc.industryYear('rsa'), 2030);
+
+  // ----- Use case anchors -----
+  assert('q_logical — chemistry', ApertureCalc.useCase('chemistry').qLogical, 150);
+  assert('q_logical — rsa', ApertureCalc.useCase('rsa').qLogical, 4000);
+  assert('q_logical — optimization', ApertureCalc.useCase('optimization').qLogical, 1000);
+
+  // ----- Error handling -----
+  let threw = false;
+  try { ApertureCalc.compute('nonsense', 100, 1); } catch { threw = true; }
+  assert('unknown use case throws', threw, true);
+
+  out.innerHTML += `\n` + (failed === 0
+    ? '<span class="pass">All tests passed.</span>'
+    : `<span class="fail">${failed} test(s) failed.</span>`);
+</script>
+</body>
+</html>
