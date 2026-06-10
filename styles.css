@@ -930,6 +930,20 @@ body {
   color: var(--ink-muted);
   line-height: 1.5;
 }
+.ai-note {
+  margin-top: calc(var(--unit) * 3);
+  padding-top: calc(var(--unit) * 2);
+  border-top: var(--rule-thin);
+}
+.ai-note .ai-note-head {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  font-weight: 700;
+  margin: 0 0 calc(var(--unit) * 1);
+}
+.ai-note p { margin: 0; max-width: 88ch; }
+.ai-note a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
 
 /* --- Motion preferences --- */
 @media (prefers-reduced-motion: reduce) {

@@ -16,27 +16,27 @@ When I raised this fund in 2022, I told you quantum advantage was a 2028 event. 
 
 I am not writing today to defend that thesis. I am writing to retire it.
 
-What follows is not a pitch. It is an accounting. Over the next thousand words I will lay out three pieces of evidence — the same three I have been carrying into our investment committee for the past nine months — and ask you to vote on what we do about them. The math is real, the quotes are public, and the conclusion is one I should have reached two years ago. We have been allocating against the wrong clock.
+What follows is not a pitch. It is an accounting. Over the next thousand words I will lay out three pieces of evidence, the same three I have been carrying into our investment committee for the past nine months, and ask you to vote on what we do about them. The math is real, the quotes are public, and the conclusion is one I should have reached two years ago. We have been allocating against the wrong clock.
 
 You do not need to take my word for any of it. Where I show you a calculation, the assumptions are yours to set. Where I show you a quote, it is verbatim and dated. I will let the physics, the public filings, and the people inside the labs make the case I should have been making to you in 2022.
 
 ## What
 
-**Pillar 1 — Error-correction overhead.** The headline number in every IBM, PsiQuantum, and Quantinuum press release is the *physical* qubit count. IBM's Condor crossed one thousand one hundred and twenty-one[1]. PsiQuantum has guided one million[2]. These are real engineering achievements. They are also not the same number as a useful quantum computer.
+**Pillar 1: Error-correction overhead.** The headline number in every IBM, PsiQuantum, and Quantinuum press release is the *physical* qubit count. IBM's Condor crossed one thousand one hundred and twenty-one[1]. PsiQuantum has guided one million[2]. These are real engineering achievements. They are also not the same number as a useful quantum computer.
 
-The useful number is *logical* qubits — qubits that survive long enough to run a non-trivial algorithm. The best demonstrated overhead today is approximately one hundred physical qubits per logical qubit[3]; the overhead *projected* for fault-tolerant computation is one thousand to one thousand five hundred. Industry is pushing on this with new code constructions[4]; no one disputes the order-of-magnitude gap remains.
+The useful number is *logical* qubits: qubits that survive long enough to run a non-trivial algorithm. The best demonstrated overhead today is approximately one hundred physical qubits per logical qubit[3]; the overhead *projected* for fault-tolerant computation is one thousand to one thousand five hundred. Industry is pushing on this with new code constructions[4]; no one disputes the order-of-magnitude gap remains.
 
 Exhibit A lets you build the timeline yourself. Pick a use case. Drag the overhead and doubling-cadence sliders to whatever you believe. The math is unforgiving: under any honest assumption, useful quantum computing arrives sometime in the 2040s. Not the 2020s.
 
-**Pillar 2 — Public-company roadmap slippage.** IBM's 2022 development roadmap forecast a 4,000-qubit system by 2025 as the gateway to the practical quantum computing era[5]. The 2025 roadmap retired that headline number and replaced it: fault-tolerant 200-logical-qubit operation by 2029 (Starling), 2,000 logical qubits by 2033 (Blue Jay)[6]. The metric of advantage moved; the date moved with it. The goalposts slid right by half a decade.
+**Pillar 2: Public-company roadmap slippage.** IBM's 2022 development roadmap forecast a 4,000-qubit system by 2025 as the gateway to the practical quantum computing era[5]. The 2025 roadmap retired that headline number and replaced it: fault-tolerant 200-logical-qubit operation by 2029 (Starling), 2,000 logical qubits by 2033 (Blue Jay)[6]. The metric of advantage moved; the date moved with it. The goalposts slid right by half a decade.
 
 This is not one company's failure. Exhibits B and C are direct quotes from IBM's and IonQ's own investor materials, paired on hover with their most recent published results. You will see the same pattern: a forward roadmap that compresses every twelve months, and a backward-looking record that does not.
 
-Of particular note for our fund: IonQ booked $43.1 million of fiscal-2024 revenue; across that year's interim reports, two customers accounted for at least two-thirds of it, anchored by a $54.5 million Air Force Research Lab award[7]. The top line is growing fast — on hardware, networking, and government R&D. We are paying for the chemistry of the future and receiving the procurement of the present.
+Of particular note for our fund: IonQ booked $43.1 million of fiscal-2024 revenue; across that year's interim reports, two customers accounted for at least two-thirds of it, anchored by a $54.5 million Air Force Research Lab award[7]. The top line is growing fast, on hardware, networking, and government R&D. We are paying for the chemistry of the future and receiving the procurement of the present.
 
-**Pillar 3 — The LP–physicist gap.** There is a third dataset, less quantitative but harder to ignore. In the eighteen months I have spent with the physicists who actually run these labs — at Caltech, at Yale, inside the IBM Quantum group — not one has told me, in private, that they expect a fault-tolerant quantum advantage inside the next decade.
+**Pillar 3: The LP-physicist gap.** There is a third dataset, less quantitative but harder to ignore. In the eighteen months I have spent with the physicists who actually run these labs, from Caltech to Yale to the IBM Quantum group, not one has told me, in private, that they expect a fault-tolerant quantum advantage inside the next decade.
 
-The same physicists, in public, are quoted in the press releases of the companies we have funded. John Preskill, who coined "quantum supremacy," has been increasingly explicit in recent talks that the NISQ era — the era in which our thesis was conceived — is ending without delivering the applications that justified it[8]. The Global Risk Institute's expert surveys still put the odds of a cryptographically relevant quantum computer arriving inside ten years below a coin flip[9] — rising each edition, never crossing even odds.
+The same physicists, in public, are quoted in the press releases of the companies we have funded. John Preskill, who coined "quantum supremacy," has been increasingly explicit in recent talks that the NISQ era, the era in which our thesis was conceived, is ending without delivering the applications that justified it[8]. The Global Risk Institute's expert surveys still put the odds of a cryptographically relevant quantum computer arriving inside ten years below a coin flip[9]; the estimate rises each edition and has not crossed even odds.
 
 We have been listening to the wrong people in the same building.
 
@@ -44,7 +44,7 @@ We have been listening to the wrong people in the same building.
 
 We have three years left on the clock for Fund II. Standing on the evidence above, I cannot ask you to underwrite three more years of the same thesis. I am asking your permission to wind down our quantum-computing positions early and return capital, less management fees, by the end of 2026.
 
-The redeployment thesis is narrower than the one I raised against. Two quantum sub-sectors meet a higher bar: the science is on a three-year horizon, and the buyer is identifiable. *Quantum sensing* — commercial today in brain imaging and mineral exploration, in defense trials for inertial navigation[10] — meets both. *Post-quantum cryptography migration* — not "the cool quantum part" but a real, regulated, near-term procurement cycle inside every bank and government we cover[11] — meets both.
+The redeployment thesis is narrower than the one I raised against. Two quantum sub-sectors meet a higher bar: the science is on a three-year horizon, and the buyer is identifiable. *Quantum sensing* meets both: commercial today in brain imaging and mineral exploration, in defense trials for inertial navigation[10]. *Post-quantum cryptography migration* meets both: not "the cool quantum part" but a real, regulated, near-term procurement cycle inside every bank and government we cover[11].
 
 If you vote to wind down, our recommendation is to redeploy thirty to forty percent of returned capital into a co-invest vehicle covering these two sub-sectors. I will not be raising a new fund for them. The thesis is too narrow for a dedicated vehicle, and I have used your trust once already.
 
